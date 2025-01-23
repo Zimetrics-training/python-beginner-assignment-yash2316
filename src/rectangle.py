@@ -9,6 +9,7 @@ Create a Rectangle class that has the following methods:
 4. is_square(self): Returns True if the rectangle is a square (i.e., width == height), otherwise returns False.
 """
 # rectangle.py
+# hello world
 class Rectangle:
     def __init__(self, width, height):
         # Initialize the rectangle with width and height
