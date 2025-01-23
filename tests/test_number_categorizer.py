@@ -1,6 +1,6 @@
 import pytest
 import sys
-sys.path.insert(0, './src')  # Add the 'src' directory to the path
+sys.path.insert(0, '../src')  # Add the 'src' directory to the path
 from number_categorizer import categorize_numbers, is_prime, is_perfect
 
 def test_categorize_numbers():
