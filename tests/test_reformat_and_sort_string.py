@@ -1,6 +1,6 @@
 import pytest
 import sys
-sys.path.insert(0, './src')  # Add the 'src' directory to the path
+sys.path.insert(0, '../src')  # Add the 'src' directory to the path
 from reformat_and_sort_string import reformat_and_sort
 
 def test_reformat_and_sort():
