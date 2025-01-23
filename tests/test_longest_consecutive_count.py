@@ -1,6 +1,6 @@
 import pytest
 import sys
-sys.path.insert(0, './src')  # Add the 'src' directory to the path
+sys.path.insert(0, '../src')  # Add the 'src' directory to the path
 from longest_consecutive_count import longest_consecutive  # Replace with actual module name
 
 def test_longest_consecutive():
