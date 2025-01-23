@@ -13,16 +13,21 @@ Create a Rectangle class that has the following methods:
 class Rectangle:
     def __init__(self, width, height):
         # Initialize the rectangle with width and height
-        pass
+        
+        self.width = width
+        self.height = height
 
     def area(self):
         # Return the area of the rectangle
-        pass
+        return self.height*self.width
 
     def perimeter(self):
         # Return the perimeter of the rectangle
-        pass
+        return 2*(self.height + self.width)
 
     def is_square(self):
         # Return True if the rectangle is a square, otherwise False
-        pass
+        if self.height == self.width:
+            return True
+        
+        return False
