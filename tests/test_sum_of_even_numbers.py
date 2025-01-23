@@ -1,6 +1,6 @@
 # test_sum_of_even_numbers.py
 import sys
-sys.path.insert(0, './src')  # Add the 'src' directory to the path
+sys.path.insert(0, '../src')  # Add the 'src' directory to the path
 
 from sum_of_even_numbers import sum_of_even_numbers
 

@@ -1,7 +1,7 @@
 import datetime
 import pytest
 import sys
-sys.path.insert(0, './src')  # Add the 'src' directory to the path
+sys.path.insert(0, '../src')  # Add the 'src' directory to the path
 from library_system import Book  # Modify this import based on your file structure
 
 def test_book_functions():

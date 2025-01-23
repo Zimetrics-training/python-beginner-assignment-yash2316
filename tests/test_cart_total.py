@@ -1,6 +1,6 @@
 import pytest
 import sys
-sys.path.insert(0, './src')  # Add the 'src' directory to the path
+sys.path.insert(0, '../src')  # Add the 'src' directory to the path
 from cart_total import calculate_total_cost, apply_discount, apply_tax, calculate_final_price
 
 def test_cart_operations():
