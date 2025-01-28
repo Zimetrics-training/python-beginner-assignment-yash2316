@@ -21,29 +21,41 @@ Define a custom exception InsufficientFundsError that will be raised when an acc
 """
 
 class InsufficientFundsError(Exception):
-    pass
+    def __init__(self, message):
+        super().__init__(message)
 
 class BankAccount:
     def __init__(self, account_holder: str, initial_balance: float):
         # Initialize the bank account
-        pass
+        self.account_holder = account_holder
+        self.balance = initial_balance
 
     def deposit(self, amount: float):
         # Deposit amount to the account
-        pass
+        if amount <= 0:
+            raise ValueError
+        
+        self.balance += amount
 
     def withdraw(self, amount: float):
         # Withdraw amount from the account
-        pass
+        if amount <= 0:
+            raise ValueError
+        
+        if self.balance < amount:
+            raise InsufficientFundsError("Insufficient balance")
+        
+        self.balance -= amount
 
     def get_balance(self):
         # Return current account balance
-        pass
+        return self.balance
 
     def transfer(self, recipient_account, amount: float):
         # Transfer amount to another account
-        pass
+        self.withdraw(amount)
+        recipient_account.deposit(amount)
 
     def __str__(self):
         # Return the string representation of the account
-        pass
+        return f"AccountHolder: {self.account_holder}, Balance: {self.balance}"

@@ -46,6 +46,9 @@ def calculate_total_cost(cart: List[Dict[str, Union[str, float]]]) -> float:
     """
     total_cost = 0.0
     # Your code to calculate total cost goes here
+    for item in cart:
+        total_cost += item["price"] * item["quantity"]
+
     return round(total_cost, 2)
 
 def apply_discount(total_cost: float) -> float:
@@ -54,6 +57,9 @@ def apply_discount(total_cost: float) -> float:
     The result should be rounded to 2 decimal places.
     """
     discounted_cost = total_cost
+
+    if total_cost > 100:
+        discounted_cost -= total_cost*0.1
     # Your code to apply discount goes here
     return round(discounted_cost, 2)
 
@@ -62,7 +68,7 @@ def apply_tax(total_cost: float) -> float:
     Function to apply an 8% sales tax to the total cost.
     The result should be rounded to 2 decimal places.
     """
-    total_with_tax = total_cost
+    total_with_tax = total_cost + total_cost*0.08
     # Your code to apply tax goes here
     return round(total_with_tax, 2)
 
@@ -73,4 +79,8 @@ def calculate_final_price(cart: List[Dict[str, Union[str, float]]]) -> float:
     """
     # Use the above functions to calculate the final price
     final_price = 0.0
+    total_cost = calculate_total_cost(cart)
+    total_cost = apply_discount(total_cost)
+    final_price = apply_tax(total_cost)
+
     return round(final_price, 2)

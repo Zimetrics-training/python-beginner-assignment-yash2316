@@ -24,16 +24,53 @@ from typing import List
 
 def is_prime(num: int) -> bool:
     # Your code to check if a number is prime
-    pass
+    if num <= 1:
+        return False
+
+    for i in range(2,int(num**0.5) + 1):
+        if num%i == 0:
+            return False
+    
+    return True
 
 def is_perfect(num: int) -> bool:
     # Your code to check if a number is perfect
-    pass
+    if num <= 1:
+        return False
+    
+    sum_of_divisors = 1
+
+    for i in range(2,num//2 + 1):
+        if num%i == 0:
+            sum_of_divisors += i
+
+    return sum_of_divisors == num    
 
 def categorize_numbers(nums: List[int]) -> List[str]:
     result = []
     for num in nums:
         # Your code to categorize each number based on the conditions
-        pass
+        res = ""
+        if num < 0:
+            res += "negative"
+        elif num > 0:
+            res += "positive"
+        else:
+            res += "zero"
+        
+        if num%2 == 0:
+            res += ", even"
+        else:
+            res+= ", odd"
+
+        if num > 0 and is_prime(num):
+            res += ", prime"
+        
+        if num > 0 and is_perfect(num):
+            res += ", perfect"
+        
+        result.append(res)
+
+        
     
     return result
